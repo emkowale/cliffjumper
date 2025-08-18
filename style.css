@@ -1,0 +1,51 @@
+/* Base wrapper */
+.cj-wrap{ position:relative; display:block; }
+.cj-wrap select.cj-hidden{
+  position:absolute !important; left:-9999px !important; top:auto !important;
+  width:1px !important; height:1px !important; overflow:hidden !important;
+}
+.cj-button{
+  width:100%; display:flex; align-items:center; justify-content:flex-start;
+  gap:.5rem; padding:10px 36px 10px 40px;
+  border:1px solid var(--cj-border, #cfdccd); border-radius:4px;
+  background:#fff; line-height:1.2; position:relative; cursor:pointer;
+}
+.cj-button, .cj-option{ font: inherit; font-size: inherit; color: inherit; }
+.cj-button .cj-caret{
+  position:absolute; right:12px; top:50%; transform:translateY(-50%) rotate(45deg);
+  width:8px; height:8px; border-right:2px solid #667; border-bottom:2px solid #667;
+  pointer-events:none;
+}
+.cj-open .cj-button .cj-caret{ transform:translateY(-50%) rotate(-135deg); }
+.cj-chip{
+  position:absolute; left:10px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; border:1px solid rgba(0,0,0,.25); border-radius:2px;
+  background:transparent; box-sizing:border-box; pointer-events:none;
+}
+.cj-chip.cj-empty{
+  background:
+    linear-gradient(45deg, #eee 25%, transparent 25%),
+    linear-gradient(-45deg, #eee 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #eee 75%),
+    linear-gradient(-45deg, transparent 75%, #eee 75%);
+  background-size:10px 10px; background-position:0 0,0 5px,5px -5px,-5px 0;
+}
+.cj-list{
+  position:absolute; left:0; right:0; z-index:50; margin-top:6px;
+  background:#fff; border:1px solid var(--cj-border, #cfdccd); border-radius:6px;
+  box-shadow:0 10px 20px rgba(0,0,0,.08); max-height:250px; overflow:auto; display:none;
+}
+.cj-open .cj-list{ display:block; }
+.cj-option{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 12px; cursor:pointer;
+}
+.cj-option:hover{ background:#f7faf7; }
+.cj-option[aria-selected="true"]{ background:#eef8ee; }
+.cj-swatch{
+  width:18px; height:18px; border:1px solid rgba(0,0,0,.25); border-radius:2px;
+}
+.cj-swatch.cj-light, .cj-chip.cj-light{ border-color:rgba(0,0,0,.35) }
+.variations .cj-wrap .cj-button{ border-color:#8bd09a; }
+.variations .cj-wrap .cj-list{ border-color:#8bd09a; }
+.cj-wrap{ min-height:38px; }
