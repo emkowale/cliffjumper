@@ -4,7 +4,7 @@
  * Description: Color swatch dropdown for WooCommerce attributes. Custom list with arrow, no default swatch, fully synced to the real <select>.
  * Author: Eric Kowalewski
  * Author URI: https://erickowalewski.com/
- * Version: 1.0.3
+ * Version: 1.0.4
  */
 
 if (!defined('ABSPATH')) exit;
