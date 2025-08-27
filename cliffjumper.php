@@ -181,3 +181,25 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 <?php
 });
+
+
+// === Auto-updates via GitHub (Plugin Update Checker) ===
+add_action('plugins_loaded', function () {
+    $pucPath = __DIR__ . '/includes/vendor/plugin-update-checker/plugin-update-checker.php';
+    if (!file_exists($pucPath)) return;
+    require $pucPath;
+
+    $updateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+        'https://github.com/emkowale/cliffjumper', // public repo URL (no .git)
+        __FILE__,                                   // main plugin file
+        'cliffjumper'                               // plugin slug (folder name)
+    );
+
+    // Track main branch explicitly
+    $updateChecker->setBranch('main');
+
+    // Prefer GitHub Release assets (zip with top-level folder "cliffjumper/")
+    if ($api = $updateChecker->getVcsApi()) {
+        $api->enableReleaseAssets();
+    }
+});
