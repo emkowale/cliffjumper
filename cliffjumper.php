@@ -1,10 +1,18 @@
 <?php
-/*
+/**
  * Plugin Name: Cliffjumper
+ * Plugin URI: https://github.com/emkowale/cliffjumper
  * Description: Color swatch dropdown for WooCommerce attributes. Custom list with arrow, no default swatch, fully synced to the real <select>.
+ * Version: 1.0.4
+ * Requires at least: 6.0
+ * Requires PHP: 7.4
  * Author: Eric Kowalewski
  * Author URI: https://erickowalewski.com/
- * Version: 1.0.4
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: cliffjumper
+ * Domain Path: /languages
+ * Update URI: https://github.com/emkowale/cliffjumper
  */
 
 if (!defined('ABSPATH')) exit;
@@ -15,7 +23,7 @@ add_action('wp_enqueue_scripts', function () {
         'cliffjumper-style',
         plugin_dir_url(__FILE__) . 'style.css',
         [],
-        '1.0.2'
+        '1.0.4'
     );
 });
 
@@ -203,3 +211,6 @@ add_action('plugins_loaded', function () {
         $api->enableReleaseAssets();
     }
 });
+
+
+
